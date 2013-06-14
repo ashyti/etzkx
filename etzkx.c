@@ -2301,5 +2301,5 @@ static struct i2c_driver etzkx_driver = {
 module_i2c_driver(etzkx_driver);
 
 MODULE_DESCRIPTION("State Machine Interrupt Driven Accelerometer");
-MODULE_AUTHOR("Andi Shyti, Mika Laaksonen");
+MODULE_AUTHOR("Andi Shyti");
 MODULE_LICENSE("GPL v2");
