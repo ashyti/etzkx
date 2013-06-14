@@ -274,6 +274,7 @@
 /* WAI register values */
 #define ETZKX_WIA_LISN3DSH		0x3B
 #define ETZKX_WIA_KXTNK			0x6E
+#define ETZKX_WIA_KXCNL			0x0F
 
 /* ETZKX accelerometer type names */
 #define ETZKX_LISN3DSH_NAME		"lisn3dsh"
@@ -1519,6 +1520,12 @@ static int etzkx_hw_detect(struct etzkx_data *sdata)
 			wai_reg[0]);
 		break;
 
+	case ETZKX_WIA_KXCNL:
+		dev_info(&sdata->client->dev,
+			"Kionix kxcnl-1010 vers %u accelerometer detected\n",
+			wai_reg[0]);
+		break;
+
 	default:
 		return -ENODEV;
 	}
@@ -1539,6 +1546,8 @@ static ssize_t etzkx_sysfs_read_hwid(struct device *dev,
 		return sprintf(buf, "lisn3dsh (%u)\n", sdata->hw_version);
 	case ETZKX_WIA_KXTNK:
 		return sprintf(buf, "kxtnk-1000 (%u)\n", sdata->hw_version);
+	case ETZKX_WIA_KXCNL:
+		return sprintf(buf, "kxcnl-1010 (%u)\n", sdata->hw_version);
 	}
 
 	return -ENODEV;
