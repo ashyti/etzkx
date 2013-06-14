@@ -2064,7 +2064,8 @@ static int etzkx_probe(struct i2c_client *client,
 		return -ENODEV;
 	}
 
-	sdata = devm_kzalloc(sizeof(struct etzkx_data), GFP_KERNEL);
+	sdata = devm_kzalloc(&client->dev,
+			sizeof(struct etzkx_data), GFP_KERNEL);
 	if (!sdata) {
 		dev_err(&client->dev, "no memory available\n");
 		return -ENOMEM;
