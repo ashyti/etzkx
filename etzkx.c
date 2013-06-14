@@ -2063,7 +2063,7 @@ static int __devinit etzkx_probe(struct i2c_client *client,
 		return -ENODEV;
 	}
 
-	sdata = kzalloc(sizeof(struct etzkx_data), GFP_KERNEL);
+	sdata = devm_kzalloc(sizeof(struct etzkx_data), GFP_KERNEL);
 	if (!sdata) {
 		dev_err(&client->dev, "no memory available\n");
 		return -ENOMEM;
@@ -2208,7 +2208,6 @@ free_src:
 		sdata->pdata->release();
 free_stmt:
 	mutex_unlock(&sdata->mutex);
-	kfree(sdata);
 
 	return err;
 }
@@ -2237,8 +2236,6 @@ static int __devexit etzkx_remove(struct i2c_client *client)
 
 	if (sdata->pdata->release)
 		sdata->pdata->release();
-
-	kfree(sdata);
 
 	return 0;
 }
