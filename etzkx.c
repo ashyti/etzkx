@@ -1849,7 +1849,7 @@ static long etzkx_chardev_ioctl(struct file *file, unsigned int cmd,
 			etzkx_state_enable_stm = etzkx_state_enable_stm1;
 
 		} else if (sdata->stm2 == ETZKX_NO_STM_RUNNING) {
-			if (sdata->stm1 != ETZKX_NO_STM_RUNNING && 
+			if (sdata->stm1 != ETZKX_NO_STM_RUNNING &&
 					etzkx_algos[sdata->stm1].stm_id ==
 					(((cmd & 0xFF) >> _IOC_NRSHIFT) >> 2))
 				return -EPERM;
