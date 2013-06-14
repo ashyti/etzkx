@@ -2046,7 +2046,7 @@ static void etzkx_input_cleanup(struct etzkx_data *sdata)
 	input_unregister_device(sdata->input_dev);
 }
 
-static int __devinit etzkx_probe(struct i2c_client *client,
+static int etzkx_probe(struct i2c_client *client,
 				const struct i2c_device_id *id)
 {
 	int err;
@@ -2213,7 +2213,7 @@ free_stmt:
 	return err;
 }
 
-static int __devexit etzkx_remove(struct i2c_client *client)
+static int etzkx_remove(struct i2c_client *client)
 {
 	struct etzkx_data *sdata = i2c_get_clientdata(client);
 
