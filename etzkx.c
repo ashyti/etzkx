@@ -2293,7 +2293,7 @@ static struct i2c_driver etzkx_driver = {
 			.pm    = &etzkx_pm_ops,
 		  },
 	.probe    = etzkx_probe,
-	.remove   = __devexit_p(etzkx_remove),
+	.remove   = etzkx_remove,
 	.id_table = etzkx_id,
 };
 
