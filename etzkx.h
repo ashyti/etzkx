@@ -1,5 +1,5 @@
 /*
- *  etzkz: lisn3dsh/kxtnk 3d accelerometer driver
+ *  etzkx: lisn3dsh/kxtnk 3d accelerometer driver
  *
  *  Copyright (C) 2013  Andi Shyti <andi@etezian.org>
  *
@@ -52,7 +52,7 @@
 /* ioctl-number: 'x' 00-2F (32 commands) */
 #define ETZKX_IOCTL_NUM			('x')
 
-struct etzkz_stm_data {
+struct etzkx_stm_data {
 	s32 id;
 	union {
 		/* double tap */
@@ -84,12 +84,12 @@ struct etzkz_stm_data {
 	} algo;
 };
 
-/* etzkz ioctl command types */
+/* etzkx ioctl command types */
 #define ETZKXIO_ENABLE			0x01
 #define ETZKXIO_DISABLE			0x02
 #define ETZKXIO_STATE			0x03
 /*
- * etzkz ioctl commands
+ * etzkx ioctl commands
  *   - first 6 bits identify the algorithm id
  *   - last 2 bits identify the operation type on the algorithm
  */
@@ -120,7 +120,7 @@ struct etzkz_stm_data {
 #define ETZKXIO_WHICH_ORIENTATION	_IOR(ETZKX_IOCTL_NUM, \
 					(ETZKX_STM_ID_ORIENTATION << 2) | \
 						ETZKXIO_STATE, \
-						struct etzkz_stm_data *)
+						struct etzkx_stm_data *)
 #define ETZKXIO_ENABLE_DOUBLE_TAP	_IO(ETZKX_IOCTL_NUM, \
 					(ETZKX_STM_ID_DOUBLE_TAP << 2) | \
 						ETZKXIO_ENABLE)
@@ -129,15 +129,15 @@ struct etzkz_stm_data {
 						ETZKXIO_DISABLE)
 #define ETZKXIO_RUNNING_ALGO		_IOR(ETZKX_IOCTL_NUM, \
 					(0x0A << 2) | ETZKXIO_STATE, \
-						struct etzkz_stm_data *)
+						struct etzkx_stm_data *)
 #define ETZKXIO_INSTANT_ORIENTATION	_IOR(ETZKX_IOCTL_NUM, \
 					(0x0B << 2) | ETZKXIO_STATE, \
-						struct etzkz_stm_data *)
+						struct etzkx_stm_data *)
 
-#define ETZKX_DEV_NAME		"etzkz"
+#define ETZKX_DEV_NAME		"etzkx"
 #define ETZKX_DRV_VERSION	5
 
-struct etzkz_platform_data {
+struct etzkx_platform_data {
 	int (*init)(void);
 	void (*release)(void);
 
