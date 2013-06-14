@@ -21,8 +21,6 @@
 #ifndef __ETZKX_H__
 #define __ETZKX_H__
 
-#include <linux/i2c-kona.h>
-
 #define ETZKX_G_RANGE_DONT_CARE		0
 #define ETZKX_G_RANGE_2G		2
 #define ETZKX_G_RANGE_4G		4
