@@ -274,7 +274,7 @@
 /* WAI register values */
 #define ETZKX_WIA_LISN3DSH		0x3B
 #define ETZKX_WIA_KXTNK			0x6E
-#define ETZKX_WIA_KXCNL			0x0F
+#define ETZKX_WIA_KXCNL			0x0B
 
 /* ETZKX accelerometer type names */
 #define ETZKX_LISN3DSH_NAME		"lisn3dsh"
