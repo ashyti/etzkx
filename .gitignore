@@ -1,0 +1,11 @@
+/Module.symvers
+/modules.order
+/tags
+
+*.o
+*.ko
+*.mod.c
+*.cmd
+cscope.*
+*~
+*.swp
