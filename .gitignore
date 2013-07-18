@@ -2,6 +2,7 @@
 /modules.order
 /tags
 
+.*
 *.o
 *.ko
 *.mod.c
